@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sponsor = () => {
+function Events() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Sponsor = () => {
   )
 }
 
-export default Sponsor
+export default Events

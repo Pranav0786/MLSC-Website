@@ -2,18 +2,21 @@ export const data = [
     {
         name: "Akshat Mahajan",
         position: "Core",
+        role: "Lead, MLSA" ,
         board: "Core",
         image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763275/MLSC%20Images/main-akshat_u9mqoi.jpg?_s=public-apps"
     },
     {
         name: "Abhishek Dudhpachare",
         position: "Core",
+        role: "Co-Lead" ,
         board: "core",
         image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763069/MLSC%20Images/main-abhishek_hw3kw7.jpg?_s=public-apps"
     },
     {
         name: "Rucha Ikare",
         position: "Core",
+        role: "Secretary" ,
         board: "core",
         image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763962/MLSC%20Images/main-rucha_pgouop.jpg?_s=public-apps"
     },

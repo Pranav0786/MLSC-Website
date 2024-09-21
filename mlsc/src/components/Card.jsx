@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { data } from "../Data/MainBoard";
+import Headings from './Hedings'
+
 
 const post = [
   "Core", "Technical Lead",
@@ -48,23 +50,16 @@ const Card = () => {
   }, [isMobile]);
 
   return (
-    <div className="p-4 xl:mt-40 mx-auto flex flex-col">
+    <div
+    data-aos="fade-up"
+    className="p-4 xl:mt-40 mx-auto flex flex-col">
 
       {/* heading */}
-      <p
-        className="text-3xl xl:text-4xl xl:font-bold mx-auto text-yellow-500 font-sans 
-                  shadow-lg text-shadow-lg"
-        style={{ 
-          textShadow: "2px 2px 8px rgba(0, 0, 0, 0.8)", // Soft shadow effect
-          fontFamily: "'Poppins', sans-serif" // Custom font family
-        }}
-      >
-        Meet our Team
-      </p>
-          
+      <Headings heading={"Meet Our Team"} />
 
       {/* Buttons for selecting board */}
-      <div className="flex flex-col sm:flex-row mb-4 mt-12 py-1 justify-center">
+      <div 
+      className="flex flex-col sm:flex-row mb-4 py-1 justify-center">
         <div 
         className={`border border-gray-500 rounded-full py-1 px-1 flex 
                     flex-wrap gap-2 justify-center items-center
@@ -80,9 +75,9 @@ const Card = () => {
                 isMobile
                   ? "px-2 py-1 text-lg inline-block max-w-max " // Ensure button fits content on mobile view
                   : "px-4 py-2 text-xl"
-              } rounded-full bg-transparent text-gray-400 border-0 
+              } rounded-full bg-transparent text-gray-400 font-semibold border-0 
                 transition duration-500 ease-in-out 
-                ${selectedBoard === role ? "xl:bg-coolGray-900 shadow-lg" : ""} 
+                ${selectedBoard === role ? "xl:bg-coolGray-900 " : ""} 
                 hover:bg-gray-950 hover:shadow-lg
                 max-w-max
                 ${isMobile && currentIndex !== index ? "hidden" : ""}`} // Hide all buttons except the current one in mobile view
@@ -97,7 +92,9 @@ const Card = () => {
 
 
       {/* Cards display */}
-      <div className="xl:mt-20  flex flex-wrap justify-center gap-10 my-12">
+      <div 
+      data-aos="fade-up"
+      className="xl:mt-20  flex flex-wrap justify-center gap-10 my-12  xl:min-h-0">
         {filteredData.map((item) => (
           <motion.div
             key={item.name}

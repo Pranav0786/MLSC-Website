@@ -1,40 +1,70 @@
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation'; 
 import { BiLogoMicrosoftTeams } from "react-icons/bi";
 import { FaLinkedin } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
+import { useState, useEffect } from 'react';
 import logo from '../assests/mlscPhotos/logo1.png';
 
-const Home = () => {
-  return (
-    <div className='flex flex-col mx-auto lg:flex-row items-center justify-center lg:justify-between gap-6 w-full text-white py-6 lg:py-12'>
-      
-      {/* Left Section */}
-      <div className='w-full lg:w-[55%] text-center lg:text-left'>
-        <h1 className='font-bold text-2xl sm:text-3xl lg:text-4xl mb-6'>
-          <TypeAnimation
-            sequence={[
-              '',
-              1000,
-              'Microsoft',
-              1000,
-              'Microsoft Learn',
-              1000,
-              'Microsoft Learn Student',
-              1000,
-              'Microsoft Learn Student Club',
-              1000,
-            ]}
-            speed={20}
-            style={{ fontSize: '1.5em', marginBottom: '5px', lineHeight: '1.5', marginTop: '5px' }}
-            repeat={Infinity}  
-            omitDeletionAnimation={true}
-          />
-        </h1>
-        <h2 className='text-xl sm:text-2xl lg:text-3xl mb-6'>Be a force for good !!!</h2>
+import TextMotion from './TextMotion';
 
-        <div className='flex items-center justify-center lg:justify-start mt-8 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
+const Home = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check the screen size and update isMobile
+    const handleResize = () => {
+      if (window.innerWidth <= 1024) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    // Add event listener on mount
+    window.addEventListener('resize', handleResize);
+    // Check initial size
+    handleResize();
+    // Cleanup on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Define the phrase with conditional line breaks for mobile
+  
+
+  
+  return (
+
+    <div className='flex flex-col mx-auto lg:flex-row items-center justify-center 
+                lg:justify-between gap-6 w-full py-6 lg:py-12
+                mt-12 mb-12 lg:mt-0'>
+
+      {/* Left Section */}
+      <div className='w-full lg:w-[65%] text-center lg:text-left'>
+        <p className='font-bold mb-6'>
+          {
+            isMobile && 
+            <TextMotion phrase={"Microsoft Learn  "} />
+          }
+          {
+            isMobile && 
+            <div className='h-2'></div>
+          }
+          {
+            isMobile && 
+            <TextMotion phrase={"Students' Club "} isDelay={true} />
+          }
+          {
+            !isMobile && 
+            <TextMotion phrase={" Microsoft Learn Students' Club "} />
+          }
+
+        </p>
+
+
+        <h2 className='text-2xl lg:text-3xl xl:ml-5 mb-6 text-yellow-500'>Be a force for good !!!</h2>
+
+        <div className='flex items-center justify-center xl:ml-5 lg:justify-start mt-8 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
           <div className='p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300'>
             <BiLogoMicrosoftTeams className='text-white' />
           </div>
@@ -51,13 +81,16 @@ const Home = () => {
       </div>
 
       {/* Image - Only visible on large screens */}
-      <div className="hidden lg:w-[30%] lg:block relative transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 ease-in-out">
+      <div 
+      data-aos= "zoom-in-down"
+      className="w-3/4 lg:w-[30%] lg:block relative transform hover:scale-105 transition-all duration-300 ease-in-out">
         <img
           alt="mlsc"
           src={logo}
           className="w-full"
         />
       </div>
+
     </div>
   );
 }

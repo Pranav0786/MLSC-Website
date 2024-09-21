@@ -1,23 +1,19 @@
+import Headings from './Hedings'
+
 const Contact = () => {
     return (
       <div
         name="contact"
-        className="w-10/12 mx-auto h-full xl:mt-52 mt- mb-52 text-white xl:border border-gray-600 flex justify-center items-center"
+        data-aos="fade-up"
+        className="w-10/12 mx-auto h-full xl:mt-52  mb-52 
+                  text-coolGray-400 xl:border border-gray-600 flex justify-center 
+                  items-center"
       >
         <div className=" p-10 max-w-screen-lg w-full sm:w-3/4 md:w-1/2">
           
           {/* starting text */}
             <div className="pb-8 flex justify-center">
-                <p
-                    className="text-3xl xl:text-4xl xl:font-bold mx-auto text-yellow-500 font-sans 
-                            shadow-lg text-shadow-lg"
-                    style={{ 
-                    textShadow: "2px 2px 8px rgba(0, 0, 0, 0.8)", // Soft shadow effect
-                    fontFamily: "'Poppins', sans-serif" // Custom font family
-                    }}
-                >
-                    Drop Us a Line
-                 </p>  
+                <Headings heading={"Drop Us a Line"} /> 
             </div>
 
           {/* form */}
@@ -30,14 +26,15 @@ const Contact = () => {
                 type="text"
                 name="Name"
                 placeholder="Name"
-                className="p-3 bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-4"
+                className="p-3 bg-transparent border-2 border-gray-600 rounded-md 
+                text-white focus:outline-none focus:border-blue-500 mb-4"
               />
       
               <label htmlFor="Email" className="text-lg font-semibold mb-2">
                 Email
               </label>
               <input
-                type="text"
+                type="email"
                 name="Email"
                 placeholder="Email"
                 className="p-3 bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-4"

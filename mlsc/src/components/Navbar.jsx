@@ -1,44 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from "../assests/mlscPhotos/logo1.png"; // Adjust path as needed
+import { FaBars } from 'react-icons/fa'; // Add your preferred icon
 
 const Navbar = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const NavbarLinks = [
-    { title: "Home", path: "/" },
-    { title: "About Us", path: "#about" },
-    { title: "Sponsor", path: "/sponsor" },
+    { title: "Events", path: "/event" },
+    { title: "Sponsors", path: "/sponsor" },
     { title: "Gallery", path: "/gallery" },
-    { title: "Contact Us", path: "/contact" },
   ];
 
   const matchRoute = (route) => location.pathname === route;
 
   return (
-    <div className='w-full max-w-screen-xl mx-auto p-4'>
-      <div className='flex items-center justify-between'>
-        {/* Logo */}
-        <Link to="/">
-          <p className='text-3xl text-white font-bold shadow-lg font-sans'>
-            WCE 
-            <span className='text-blue-700'> - MLSC</span>
-          </p>
-        </Link>
+    <div className="flex-grow lg:w-10/12 sm:w-full max-w-maxContent mx-auto xl:border
+                   border-gray-500 rounded-xl p-4">
+      <div className="flex items-center justify-between">
+        {/* WCE MLSC text */}
+        <div>
+          <Link to="/">
+            <p className="text-lg lg:text-3xl text-white font-extrabold drop-shadow-lg 
+                        font-sans cursor-pointer">
+              WCE<span className="text-blue-300"> - MLSC</span>
+            </p>
+          </Link>
+        </div>
 
-
-        {/* Centered Navigation links */}
-        <nav className="hidden md:flex flex-grow justify-center">
-          <ul className="flex items-center gap-x-8 text-white">
+        {/* Centered Navigation links for both mobile and desktop */}
+        <nav className="hidden lg:flex flex-grow justify-center">
+          <ul className="flex items-center font-sans xl:text-xl text-white">
             {NavbarLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index} className="list-none">
                 <Link to={link.path}>
                   <p
                     className={`px-4 py-2 rounded-full transition-colors duration-300 
-                      ${matchRoute(link.path) 
-                        ? "bg-gray-700 text-slate-400" 
-                        : "hover:bg-gray-700 hover:text-slate-400"} 
-                      font-bold`}
+                    ${matchRoute(link.path)
+                      ? "bg-gray-700 text-slate-400 shadow-md"
+                      : "hover:bg-gray-700 hover:text-slate-400 shadow-sm"}
+                    font-bold cursor-pointer`}
                   >
                     {link.title}
                   </p>
@@ -47,16 +48,44 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        
-        {/* Mobile Menu Button (optional) */}
-        <button className="md:hidden text-white">
-          <span className="sr-only">Open menu</span>
-          {/* You can add an icon here */}
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
+
+        {/* Mobile Menu Icon */}
+        <button 
+          className="lg:hidden p-2 text-white"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <FaBars />
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden fixed top-0 right-0 h-auto w-full bg-gray-900 bg-opacity-90 
+                        flex flex-col p-4 text-white"
+        >
+          <button 
+            className="self-start text-white text-2xl mb-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            &times; {/* Close icon */}
+          </button>
+          <div className="flex flex-col space-y-4">
+            {NavbarLinks.map((link, index) => (
+              <Link key={index} to={link.path} onClick={() => setIsMenuOpen(false)}>
+                <p
+                  className={`px-4 py-2 rounded-full transition-colors duration-300 
+                    ${matchRoute(link.path)
+                      ? "bg-gray-700 text-slate-400 shadow-md"
+                      : "hover:bg-gray-700 hover:text-slate-400 shadow-sm"}
+                    font-bold cursor-pointer`}
+                >
+                  {link.title}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
