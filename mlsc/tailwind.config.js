@@ -6,6 +6,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        timeline: {
+          100: '#3F51B5',  // Primary
+          200: '#303F9F',  // Dark Primary
+          300: '#C5CAE9',  // Light Primary
+          400: '#FFFFFF',  // Text
+          500: '#212121',  // Primary Text
+          600: '#757575',  // Secondary Text
+          700: '#FF4081',  // Accent
+        },
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',

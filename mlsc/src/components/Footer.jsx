@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-coolGray-800  text-gray-300 rounded-xl shadow-slate-400 ">
+    <footer className="bg-coolGray-500 text-gray-300 rounded-xl shadow-slate-400 ">
       <div className="max-w-6xl mx-auto px-4 py-8 ">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between  items-center">
           <div className="mb-4 md:mb-0">
             <h2 className="text-2xl font-bold text-blue-500">MLSC</h2>
             <p className="mt-2">Creating innovative solutions for a better tomorrow.</p>

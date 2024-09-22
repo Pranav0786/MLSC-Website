@@ -21,10 +21,11 @@ const Navbar = () => {
         {/* WCE MLSC text */}
         <div>
           <Link to="/">
-            <p className="text-lg lg:text-3xl text-white font-extrabold drop-shadow-lg 
-                        font-sans cursor-pointer">
-              WCE<span className="text-blue-300"> - MLSC</span>
-            </p>
+          <p className="text-2xl lg:text-3xl text-white font-extrabold drop-shadow-lg 
+                                  font-[Playfair Display] cursor-pointer">
+                        WCE<span className="text-blue-300"> - MLSC</span>
+          </p>
+
           </Link>
         </div>
 
@@ -51,7 +52,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Icon */}
         <button 
-          className="lg:hidden p-2 text-white"
+          className="lg:hidden p-2  text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <FaBars />
@@ -60,11 +61,11 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed top-0 right-0 h-auto w-full bg-gray-900 bg-opacity-90 
-                        flex flex-col p-4 text-white"
+        <div className="lg:hidden fixed top-0 right-0 h-auto w-full bg-gray-950 bg-opacity-90
+                        flex flex-col items-center text-center p-4 text-white text-xl z-50"
         >
           <button 
-            className="self-start text-white text-2xl mb-4"
+            className="self-end text-white font-bold text-4xl mr-1 "
             onClick={() => setIsMenuOpen(false)}
           >
             &times; {/* Close icon */}
