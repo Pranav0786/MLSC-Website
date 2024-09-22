@@ -5,15 +5,14 @@ const Contact = () => {
       <div
         name="contact"
         data-aos="fade-up"
-        className="w-10/12 mx-auto h-full xl:mt-52  mb-52 
-                  text-coolGray-400 xl:border border-gray-600 flex justify-center 
-                  items-center"
+        className="w-10/12 mx-auto h-full xl:mt-40 mt-40 mb-52 
+                  text-coolGray-400 flex justify-center items-center"
       >
-        <div className=" p-10 max-w-screen-lg w-full sm:w-3/4 md:w-1/2">
+        <div className=" max-w-screen-lg w-full xl:w-3/4">
           
           {/* starting text */}
             <div className="pb-8 flex justify-center">
-                <Headings heading={"Drop Us a Line"} /> 
+                <Headings heading={"DROP US A LINE"} /> 
             </div>
 
           {/* form */}

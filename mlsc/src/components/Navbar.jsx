@@ -15,31 +15,32 @@ const Navbar = () => {
   const matchRoute = (route) => location.pathname === route;
 
   return (
-    <div className="flex-grow lg:w-10/12 sm:w-full max-w-maxContent mx-auto xl:border
-                   border-gray-500 rounded-xl p-4">
-      <div className="flex items-center justify-between">
+    <div className="w-full fixed z-40 border border-gray-800 bg-gray-900 rounded-b-xl p-4 
+                   shadow-[0_4px_10px_rgba(0,0,0,0.5)] opacity-90 overflow-hidden">
+
+      <div className="flex items-center justify-between lg:w-10/12 w-full mx-auto max-w-[100vw]">
+
         {/* WCE MLSC text */}
         <div>
           <Link to="/">
-          <p className="text-2xl lg:text-3xl text-white font-extrabold drop-shadow-lg 
+            <p className="text-2xl lg:text-4xl text-white font-extrabold drop-shadow-lg 
                                   font-[Playfair Display] cursor-pointer">
                         WCE<span className="text-blue-300"> - MLSC</span>
-          </p>
-
+            </p>
           </Link>
         </div>
 
-        {/* Centered Navigation links for both mobile and desktop */}
-        <nav className="hidden lg:flex flex-grow justify-center">
-          <ul className="flex items-center font-sans xl:text-xl text-white">
+        {/* Centered Navigation links for desktop */}
+        <nav className="hidden lg:flex justify-end">
+          <ul className="flex items-center gap-4 font-sans xl:text-xl text-white">
             {NavbarLinks.map((link, index) => (
               <li key={index} className="list-none">
                 <Link to={link.path}>
                   <p
                     className={`px-4 py-2 rounded-full transition-colors duration-300 
                     ${matchRoute(link.path)
-                      ? "bg-gray-700 text-slate-400 shadow-md"
-                      : "hover:bg-gray-700 hover:text-slate-400 shadow-sm"}
+                      ? " text-blue-500 shadow-md"
+                      : " hover:text-blue-500 shadow-sm"}
                     font-bold cursor-pointer`}
                   >
                     {link.title}
@@ -52,20 +53,22 @@ const Navbar = () => {
 
         {/* Mobile Menu Icon */}
         <button 
-          className="lg:hidden p-2  text-white"
+          className="lg:hidden p-2 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <FaBars />
+          <FaBars 
+            className='self-end text-white font-bold text-xl mr-1'
+          />
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed top-0 right-0 h-auto w-full bg-gray-950 bg-opacity-90
-                        flex flex-col items-center text-center p-4 text-white text-xl z-50"
+        <div className="lg:hidden fixed top-0 right-0 w-full bg-gray-950 bg-opacity-90
+                        flex flex-col items-center text-center p-4 text-white text-xl z-50 max-w-[100vw]"
         >
           <button 
-            className="self-end text-white font-bold text-4xl mr-1 "
+            className="self-end text-white font-bold text-4xl mr-3"
             onClick={() => setIsMenuOpen(false)}
           >
             &times; {/* Close icon */}

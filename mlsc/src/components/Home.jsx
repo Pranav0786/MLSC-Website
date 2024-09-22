@@ -37,7 +37,7 @@ const Home = () => {
 
     <div className='flex flex-col mx-auto lg:flex-row items-center justify-center 
                 lg:justify-between gap-6 w-full py-6 lg:py-12
-                mt-12 mb-12 lg:mt-0'>
+                mt-28 mb-12 '>
 
       {/* Left Section */}
       <div className='w-full lg:w-[65%] text-center lg:text-left'>

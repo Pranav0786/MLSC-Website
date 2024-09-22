@@ -55,7 +55,7 @@ const Card = () => {
     className="p-4 xl:mt-40 mx-auto flex flex-col">
 
       {/* heading */}
-      <Headings heading={"Meet Our Team"} />
+      <Headings heading={"MEET OUR TEAM"} />
 
       {/* Buttons for selecting board */}
       <div 
@@ -93,31 +93,35 @@ const Card = () => {
 
       {/* Cards display */}
       <div 
-      data-aos="fade-up"
-      className="xl:mt-20  flex flex-wrap justify-center gap-10 my-12  xl:min-h-0">
-        {filteredData.map((item) => (
-          <motion.div
-            key={item.name}
-            className={`card bg-transparent p-6 shadow-2xl border-2 
-              border-gray-500 hover:shadow-coolGray-400 rounded-2xl 
-              text-center ${isMobile ? "h-[300px] w-[260px]" : "h-[400px] w-[340px]"}`} // Smaller card for mobile
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className={`mx-auto rounded-2xl ${
-                isMobile ? "w-40 h-40" : "w-56 h-56"
-              } mb-4 border-2 border-gray-600 shadow-sm`} // Smaller image for mobile
-            />
-            <h3 className="text-xl font-semibold xl:pt-8 text-gray-400">{item.name}</h3>
-            <p className="text-gray-400 pt-3 ">{item.position}</p>
-          </motion.div>
-        ))}
+        data-aos="fade-up"
+        className="xl:mt-20 flex flex-wrap justify-center gap-10 my-12 ">
+          {filteredData.map((item) => (
+            <motion.div
+              key={item.name}
+              className={`card bg-gradient-to-b from-gray-700 to-gray-950 p-6 shadow-2xl 
+                border-r-2 border-b-2 border-gray-600 rounded-2xl text-center 
+                transform transition-transform duration-300 ease-in-out 
+                ${isMobile ? "h-[300px] w-[260px]" : "h-[400px] w-[340px]"}`} // Smaller card for mobile
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className={`mx-auto rounded-2xl  ${
+                  isMobile ? "w-40 h-40" : "w-56 h-56"
+                } mb-4 border-2 border-gray-600 shadow-lg`} // Added stronger shadow
+              />
+              <h3 className="text-xl font-semibold xl:pt-8 text-gray-400">{item.name}</h3>
+              <p className="text-gray-400 pt-3 ">{item.position}</p>
+            </motion.div>
+          ))}
       </div>
+
+
+
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Headings from "../components/Hedings"
+
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -34,7 +36,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex justify-center space-x-4">
+    <div className="flex justify-center space-x-4 flex-wrap">
       {Object.entries(timeLeft).map(([key, value], index) => (
         <motion.div
           key={key}
@@ -43,10 +45,10 @@ const CountdownTimer = () => {
           transition={{ duration: 0.5, delay: 0.2 * index }}
           className="flex flex-col items-center"
         >
-          <div className="text-4xl font-bold text-white bg-opacity-20 bg-white rounded-lg p-4 w-24">
+          <div className="text-4xl font-bold text-white bg-opacity-20 bg-white rounded-lg p-4 w-20 md:w-24">
             {value.toString().padStart(2, '0')}
           </div>
-          <div className="text-sm uppercase text-white mt-2">{key}</div>
+          <div className="text-xs md:text-sm uppercase text-white mt-2">{key}</div>
         </motion.div>
       ))}
     </div>
@@ -55,26 +57,26 @@ const CountdownTimer = () => {
 
 const Gallery = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br  from-gray-900 via-gray-800 to-black flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center px-4">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center"
+        className="text-center max-w-4xl w-full"
       >
         <motion.h1
           initial={{ scale: 0.5 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 260, damping: 20 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
+          className="text-4xl md:text-7xl font-bold text-white mb-6"
         >
-          Coming Soon
+          <Headings heading={"Coming Soon"} />
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-xl md:text-2xl text-white mb-8"
+          className="text-lg md:text-2xl text-white mb-8"
         >
           Our amazing gallery is under construction. Stay tuned!
         </motion.p>
@@ -103,7 +105,7 @@ const Gallery = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-16 h-16 text-white mx-auto"
+            className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto"
           >
             <path
               strokeLinecap="round"
