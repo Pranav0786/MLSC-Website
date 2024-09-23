@@ -1,3 +1,4 @@
+import ContactForm from './ContactForm';
 import Headings from './Hedings'
 
 const Contact = () => {
@@ -11,49 +12,14 @@ const Contact = () => {
         <div className=" max-w-screen-lg w-full xl:w-3/4">
           
           {/* starting text */}
-            <div className="pb-8 flex justify-center">
+            <div className=" flex justify-center">
                 <Headings heading={"DROP US A LINE"} /> 
             </div>
 
           {/* form */}
-          <div className="flex items-center justify-center">
-            <form action="" method="POST" className="flex flex-col w-full">
-              <label htmlFor="Name" className="text-lg font-semibold mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                name="Name"
-                placeholder="Name"
-                className="p-3 bg-transparent border-2 border-gray-600 rounded-md 
-                text-white focus:outline-none focus:border-blue-500 mb-4"
-              />
-      
-              <label htmlFor="Email" className="text-lg font-semibold mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="Email"
-                placeholder="Email"
-                className="p-3 bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-4"
-              />
-      
-              <label htmlFor="message" className="text-lg font-semibold mb-2">
-                Message
-              </label>
-              <textarea
-                name="message"
-                placeholder="Enter your message"
-                rows="6"
-                className="p-3 bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-6"
-              />
-      
-              <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 rounded-md mx-auto hover:scale-105 transition-transform duration-300">
-                Submit
-              </button>
-            </form>
-          </div>
+          <ContactForm 
+          />
+          
         </div>
       </div>
     );

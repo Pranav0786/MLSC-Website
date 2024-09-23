@@ -20,15 +20,15 @@ const Footer = () => {
 
           {/* Social Icons section */}
           <div className="flex space-x-4 justify-center mt-3 md:mt-0"> {/* Reduced space between icons on mobile */}
-            <Link to="#" className="hover:text-white transition-colors group">
+            <Link to="https://discord.gg/pYFknUjw" className="hover:text-white transition-colors group">
               <FaDiscord className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">Discord</span>
             </Link>
-            <Link to="#" className="hover:text-white transition-colors group">
+            <Link to="https://www.linkedin.com/company/wce-mlsc/" className="hover:text-white transition-colors group">
               <FaLinkedin className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link to="#" className="hover:text-white transition-colors group">
+            <Link to="https://github.com/" className="hover:text-white transition-colors group">
               <FaGithub className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">GitHub</span>
             </Link>

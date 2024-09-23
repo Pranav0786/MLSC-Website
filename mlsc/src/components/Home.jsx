@@ -40,7 +40,7 @@ const Home = () => {
                 mt-28 mb-12 '>
 
       {/* Left Section */}
-      <div className='w-full lg:w-[65%] text-center lg:text-left'>
+      <div className='w-full lg:w-[70%] text-center lg:text-left'>
         <p className='font-bold mb-6'>
           {
             isMobile && 
@@ -62,22 +62,42 @@ const Home = () => {
         </p>
 
 
-        <h2 className='text-2xl lg:text-3xl xl:ml-5 mb-6 text-yellow-500'>Be a force for good !!!</h2>
+        <h2 className='text-2xl lg:text-3xl mb-6 text-yellow-500'>Be a force for good !!!</h2>
 
-        <div className='flex items-center justify-center xl:ml-5 lg:justify-start mt-8 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
-          <div className='p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300'>
+        <div className='flex items-center justify-center lg:justify-start mt-8 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
+          <a 
+            href="https://teams.microsoft.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className='p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300'
+          >
             <BiLogoMicrosoftTeams className='text-white' />
-          </div>
-          <div className='p-2 rounded-full bg-blue-600 hover:bg-blue-500 transition-all duration-300'>
+          </a>
+          <a 
+            href="https://www.linkedin.com/company/wce-mlsc/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className='p-2 rounded-full bg-blue-600 hover:bg-blue-500 transition-all duration-300'
+          >
             <FaLinkedin className='text-white' />
-          </div>
-          <div className='p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-all duration-300'>
+          </a>
+          <a 
+            href="https://discord.gg/pYFknUjw" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className='p-2 rounded-full bg-gray-900 hover:bg-gray-800 transition-all duration-300'
+          >
             <FaDiscord className='text-white' />
-          </div>
-          <div className='p-2 rounded-full bg-black hover:bg-gray-800 transition-all duration-300'>
+          </a>
+          <a 
+            href="https://github.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className='p-2 rounded-full bg-black hover:bg-gray-800 transition-all duration-300'
+          >
             <FaGithubSquare className='text-white' />
-          </div>
-        </div>
+          </a>
+        </div>           
       </div>
 
       {/* Image - Only visible on large screens */}

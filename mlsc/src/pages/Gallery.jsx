@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Headings from "../components/Hedings"
-
+import Headings from "../components/Hedings";
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -12,27 +11,30 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2023-12-31T00:00:00"); // Set your target date here
+    // Set your target date here
+    const targetDate = new Date("2024-10-01:00:00"); 
 
-    const interval = setInterval(() => {
+    const updateTimer = () => {
       const now = new Date();
       const difference = targetDate.getTime() - now.getTime();
 
-      if (difference < 0) {
-        clearInterval(interval);
+      if (difference <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
       const seconds = Math.floor((difference / 1000) % 60);
 
       setTimeLeft({ days, hours, minutes, seconds });
-    }, 1000);
+    };
 
-    return () => clearInterval(interval);
+    updateTimer(); // Update immediately on mount
+    const interval = setInterval(updateTimer, 1000); // Update every second
+
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return (
