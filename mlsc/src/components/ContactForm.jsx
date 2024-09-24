@@ -67,6 +67,7 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
         />
         <input
@@ -76,6 +77,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-4"
         />
         <textarea
@@ -85,10 +87,12 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           rows="6"
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
         />
         <button
           type="submit"
+          data-aos="fade-up"
           className="w-full bg-blue-500 text-white py-2 xl:py-3 rounded-md hover:bg-blue-600 transition duration-300"
         >
           Submit!

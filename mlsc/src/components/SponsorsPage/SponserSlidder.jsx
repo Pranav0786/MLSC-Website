@@ -18,9 +18,12 @@ const SponsorSlider = ({ sponsors }) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 ">
+    <div 
+    data-aos="fade-up"
+    className="max-w-6xl mx-auto px-4 ">
       <div className="relative overflow-hidden">
         <div
+        
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >

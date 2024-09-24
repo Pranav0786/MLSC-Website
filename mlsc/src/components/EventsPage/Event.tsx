@@ -127,7 +127,7 @@ const TimelineItem: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
 
 export default function MobileOptimizedTimeline() {
   return (
-    <div className="w-full md:w-9/12 mx-auto p-8 md:p-6 rounded-xl mt-40">
+    <div className="w-full md:w-9/12 mx-auto p-8 md:p-6 rounded-xl mt-32">
       <Headings heading={"Event Tracker"} />
       <div className="min-h-10"></div>
       <div className="relative">

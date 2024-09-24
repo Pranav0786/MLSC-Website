@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Headings from "../components/Hedings";
 
 const CountdownTimer = () => {
@@ -38,7 +39,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex justify-center space-x-4 flex-wrap">
+    <div className="flex justify-center space-x-4 ">
       {Object.entries(timeLeft).map(([key, value], index) => (
         <motion.div
           key={key}
@@ -90,6 +91,8 @@ const Gallery = () => {
         >
           <CountdownTimer />
         </motion.div>
+
+        {/* arrow */}
         <motion.div
           animate={{
             y: [0, -10, 0],
@@ -102,21 +105,25 @@ const Gallery = () => {
           }}
           className="mt-12"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <Link to={"/"}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-12 h-12 md:w-16 md:h-16 text-white mx-auto"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </Link>
         </motion.div>
+
+
       </motion.div>
     </div>
   );

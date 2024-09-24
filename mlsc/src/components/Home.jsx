@@ -40,7 +40,7 @@ const Home = () => {
                 mt-28 mb-12 '>
 
       {/* Left Section */}
-      <div className='w-full lg:w-[70%] text-center lg:text-left'>
+      <div className='w-full lg:w-[70%] text-center flex flex-col xl:pl-5 lg:text-left'>
         <p className='font-bold mb-6'>
           {
             isMobile && 
@@ -56,15 +56,19 @@ const Home = () => {
           }
           {
             !isMobile && 
-            <TextMotion phrase={" Microsoft Learn Students' Club "} />
+            <TextMotion phrase={"      Microsoft Learn Students' Club "} />
           }
 
         </p>
 
 
-        <h2 className='text-2xl lg:text-3xl mb-6 text-yellow-500'>Be a force for good !!!</h2>
+        <h2 
+        data-aos="fade-up"
+        className='text-2xl lg:text-3xl mb-6 text-yellow-500'>Be a force for good !!!</h2>
 
-        <div className='flex items-center justify-center lg:justify-start mt-8 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
+        <div 
+        data-aos="fade-up"
+        className='flex items-center justify-center lg:justify-start mt-5 space-x-6 text-2xl sm:text-3xl lg:text-4xl'>
           <a 
             href="https://teams.microsoft.com" 
             target="_blank" 
@@ -99,10 +103,12 @@ const Home = () => {
           </a>
         </div>           
       </div>
+          
+          <div className='h-2 xl:h-0'></div>
 
       {/* Image - Only visible on large screens */}
       <div 
-      data-aos= "zoom-in-down"
+      data-aos="fade-up"
       className="w-3/4 lg:w-[30%] lg:block relative transform hover:scale-105 transition-all duration-300 ease-in-out">
         <img
           alt="mlsc"

@@ -49,7 +49,9 @@ const SponsorForm = () => {
   };
 
   return (
-    <div className="mt-16 p-8 rounded-lg flex flex-col justify-center items-center  mx-auto max-w-4xl"
+    <div 
+    
+    className="mt-16 p-8 rounded-lg flex flex-col justify-center items-center  mx-auto max-w-4xl"
     >
       <Headings heading={"Interested in sponsoring us?"} />
       <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg text-center">
@@ -60,6 +62,7 @@ const SponsorForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
         />
         <input
@@ -69,6 +72,7 @@ const SponsorForm = () => {
           value={formData.company}
           onChange={handleChange}
           required
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
         />
         <input
@@ -78,6 +82,7 @@ const SponsorForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500 mb-4"
         />
         <textarea
@@ -87,10 +92,12 @@ const SponsorForm = () => {
           onChange={handleChange}
           required
           rows="6"
+          data-aos="fade-up"
           className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
         />
         <button
           type="submit"
+          data-aos="fade-up"
           className="w-full bg-blue-500 text-white py-2 xl:py-3 rounded-md hover:bg-blue-600 transition duration-300"
         >
           Submit!

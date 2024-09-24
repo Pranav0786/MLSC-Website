@@ -1,4 +1,8 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 import Headings from "../components/Hedings"
 import SponserSlidder from '../components/SponsorsPage/SponserSlidder';
 import SponsorForm from '../components/SponsorsPage/SponserForm';
@@ -20,32 +24,45 @@ const SponsorSection = () => {
   
 
   return (
-    <div className="w-full h-full flex flex-col mt-40 overflow-x-hidden">
+    <div className="w-full h-full flex flex-col mt-32 overflow-x-hidden">
 
-        <div className='flex-grow sm:w-full max-w-6xl mx-auto p-4'>
+        <div className='flex-grow sm:w-full max-w-6xl mx-auto p-4'
+        >
 
           {/* heading */}
-          <div className="text-center mb-10">
+          {/* <div className="text-center mb-10">
             <Headings heading={"OUR SPONSORS"} />
           </div>
           
           <div className=""
           >
             <SponserSlidder sponsors={sponsors} />
-          </div>
+          </div> */}
 
 
-          <div className="mt-16 p-8 flex flex-col justify-center xl:border-0 border border-gray-700 rounded-lg mx-auto">
+          <div 
+          className=" p-8 flex flex-col justify-center xl:border-0 border border-gray-700 rounded-lg mx-auto">
             <Headings heading={"WHY SPONSOR US?"} />
-            <div className="space-y-4 text-justify text-coolGray-400 ">
-              <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit tenetur id eos praesentium reiciendis ab, sunt excepturi quisquam est optio dignissimos accusamus facilis? Odio sint architecto odit ratione, dicta minus!
+            <div 
+            className="space-y-4 text-justify xl:text-lg text-coolGray-400 xl:text-white font-semibold ">
+              <p 
+              data-aos="fade-up"
+              className="">
+                <span className='text-blue-400 '>High-Impact Events:</span> {" "}
+                MLSC hosts various workshops, hackathons, and technical events aimed at empowering students to build industry-relevant skills. Events like Techumen and Hackathons draw hundreds of attendees, offering sponsors an excellent platform for brand visibility and engagement with the tech-savvy youth.
               </p>
-              <p className="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam accusantium obcaecati veritatis quaerat voluptates cupiditate blanditiis minus. Eos labore unde qui repudiandae vitae, amet magni veritatis laudantium quis veniam sapiente.
+              <p 
+              data-aos="fade-up"
+              className="">
+                <span className='text-blue-400'>Diverse Audience Reach:</span> {" "}
+                 As a sponsor, your brand will be showcased across our events, social media platforms, and web presence. MLSC engages students across multiple disciplines, ensuring your brand reaches a wide and diverse audience.
               </p>
-              <p className="">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique sequi culpa fugiat dolores saepe magni molestiae voluptatem itaque! Eum enim dicta consequatur officia at culpa ex unde quam tempora soluta?
+              
+              <p 
+              data-aos="fade-up"
+              className="">
+                <span className='text-blue-400'>Support for Innovation:</span> {" "}
+                 By backing MLSC, you are contributing to the next generation of innovators and leaders who are passionate about technology and its transformative potential. Your support allows us to provide students with the resources and opportunities to bring their ideas to life.
               </p>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Home from '../components/Home';
 import About from '../components/About';
 import Card from '../components/Card';
 import Contact from '../components/Contact';
-import UpComingEvents from '../components/UpComing/UpComingEvents';
+// import UpComingEvents from '../components/UpComing/UpComingEvents';
 
 const Body = () => {
   return (

@@ -23,3 +23,16 @@ code {
     monospace;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For Internet Explorer, Edge (Legacy) */
+body {
+  -ms-overflow-style: none;
+}

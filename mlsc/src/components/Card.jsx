@@ -59,6 +59,7 @@ const Card = () => {
 
       {/* Buttons for selecting board */}
       <div 
+      data-aos="fade-up"
       className="flex flex-col sm:flex-row mb-4 py-1 justify-center">
         <div 
         className={`border border-gray-500 rounded-full py-1 px-1 flex 

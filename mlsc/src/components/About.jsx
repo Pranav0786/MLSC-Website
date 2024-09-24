@@ -31,7 +31,7 @@ const About = () => {
         </div>
 
         {/* Second Box - Image */}
-        <div 
+        {/* <div 
         className="md:w-5/6  flex justify-center">
           <img 
             data-aos="fade-up"
@@ -40,7 +40,7 @@ const About = () => {
             src="https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726766606/MLSC%20Images/MLSC-about_msc9aj.jpg?_s=public-apps" 
             alt="MLSC Club"
           />
-        </div>
+        </div> */}
 
 
       </section>

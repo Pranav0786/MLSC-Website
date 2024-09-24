@@ -5,6 +5,7 @@ const Hedings = ({heading}) => {
   return (
     <div className='mx-auto xl:mb-10 mb-5'>
         <p
+        data-aos="fade-up"
           className="text-3xl xl:text-5xl font-extrabold mx-auto text-yellow-500 uppercase
                   text-wrap text-center
                     "
