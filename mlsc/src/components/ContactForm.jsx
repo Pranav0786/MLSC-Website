@@ -1,7 +1,4 @@
-
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import Headings from "./Hedings";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,46 +16,36 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        'service_4p2y9i9', // Replace with your EmailJS Service ID
-        'template_7bgndwd', // Replace with your EmailJS Template ID
-        formData,
-        'RsdOZ0l6ybQb5F-p7' // Replace with your EmailJS User ID
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+    fetch("https://getform.io/f/brolqzoa", { // Replace with your Getform endpoint
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
           toast.success("Message sent successfully!", {
             position: "top-center",
           });
-          <input
-            type="text"
-            placeholder="Company Name"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            required
-            className="p-3 w-full bg-transparent border-2 border-gray-600 rounded-md text-white focus:outline-none focus:border-blue-500"
-          />
           setFormData({
             name: "",
             email: "",
             message: "",
           });
-        },
-        (error) => {
-          console.log("FAILED...", error);
+        } else {
           toast.error("Failed to send message. Please try again.", {
             position: "top-center",
           });
         }
-      );
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Please try again.", {
+          position: "top-center",
+        });
+      });
   };
 
   return (
-    <div className=" p-8 rounded-lg flex flex-col justify-center items-center mx-auto max-w-4xl">
-
+    <div className="p-8 rounded-lg flex flex-col justify-center items-center mx-auto max-w-4xl">
       <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg text-center">
         <input
           type="text"

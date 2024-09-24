@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
 import Headings from "../Hedings";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,16 +18,13 @@ const SponsorForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        'service_4p2y9i9', // Replace with your EmailJS Service ID
-        'template_wy9pnqc', // Replace with your EmailJS Template ID
-        formData,
-        'RsdOZ0l6ybQb5F-p7' // Replace with your EmailJS User ID
-      )
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+    fetch("https://getform.io/f/brolqzoa", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
           toast.success("Message sent successfully!", {
             position: "top-center",
           });
@@ -38,21 +34,21 @@ const SponsorForm = () => {
             email: "",
             message: "",
           });
-        },
-        (error) => {
-          console.log("FAILED...", error);
+        } else {
           toast.error("Failed to send message. Please try again.", {
             position: "top-center",
           });
         }
-      );
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Please try again.", {
+          position: "top-center",
+        });
+      });
   };
 
   return (
-    <div 
-    
-    className="mt-16 p-8 rounded-lg flex flex-col justify-center items-center  mx-auto max-w-4xl"
-    >
+    <div className="mt-16 p-8 rounded-lg flex flex-col justify-center items-center mx-auto max-w-4xl">
       <Headings heading={"Interested in sponsoring us?"} />
       <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg text-center">
         <input
@@ -105,7 +101,7 @@ const SponsorForm = () => {
       </form>
       <ToastContainer
         position="top-center"
-        autoClose={5000} // Duration before toast auto-dismisses
+        autoClose={5000}
         hideProgressBar
         newestOnTop
         closeOnClick

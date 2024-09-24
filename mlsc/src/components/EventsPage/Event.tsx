@@ -14,7 +14,7 @@ const timelineData: TimelineItem[] = [
   {
     title: "Azure Xplore",
     text: "Register Now",
-    link: "" ,
+    link: "https://forms.office.com/r/xH1KmPK8Aj" ,
     description: "Explore cloud computing and Microsoft Azure by starting with foundational concepts and Azure services. Gain hands-on experience in setting up and managing resources, and learn to build and deploy applications using Azure's tools for practical development.",
   },
   {

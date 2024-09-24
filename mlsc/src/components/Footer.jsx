@@ -1,4 +1,5 @@
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaDiscord , FaLinkedin , FaYoutube} from "react-icons/fa";
+import { MdOutlineWhatsapp } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -20,6 +21,10 @@ const Footer = () => {
 
           {/* Social Icons section */}
           <div className="flex space-x-4 justify-center mt-3 md:mt-0"> {/* Reduced space between icons on mobile */}
+            <Link to="https://www.youtube.com/@WCEMLSC" className="hover:text-white transition-colors group">
+              <FaYoutube className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
+              <span className="sr-only">Discord</span>
+            </Link>
             <Link to="https://discord.gg/pYFknUjw" className="hover:text-white transition-colors group">
               <FaDiscord className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">Discord</span>
@@ -28,8 +33,8 @@ const Footer = () => {
               <FaLinkedin className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link to="https://github.com/" className="hover:text-white transition-colors group">
-              <FaGithub className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
+            <Link to="https://chat.whatsapp.com/FYOmgQpITOsCPtd84Eme0x" className="hover:text-white transition-colors group">
+              <MdOutlineWhatsapp className="w-6 h-6 transition-transform group-hover:scale-110 group-hover:-translate-y-1" />
               <span className="sr-only">GitHub</span>
             </Link>
           </div>

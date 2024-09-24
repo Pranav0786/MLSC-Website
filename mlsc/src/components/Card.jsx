@@ -5,14 +5,14 @@ import Headings from './Hedings'
 
 
 const post = [
-  "Core", "Technical Lead",
-  "Event Coordinator", "Social Lead",
-  "Design Lead", "AI ML Lead", "Blog Writer",
-  "Editor", "Advisory Member"
+  "Core Team", "Technical Team",
+  "Event Coordinator", "Social Team",
+  "Design Team", "Blog Writer",
+  "Editor", "Advisory Members"
 ];
 
 const Card = () => {
-  const [selectedBoard, setSelectedBoard] = useState("Core");
+  const [selectedBoard, setSelectedBoard] = useState("Core Team");
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -116,7 +116,7 @@ const Card = () => {
                 } mb-4 border-2 border-gray-600 shadow-lg`} // Added stronger shadow
               />
               <h3 className="text-xl font-semibold xl:pt-8 text-gray-400">{item.name}</h3>
-              <p className="text-gray-400 pt-3 ">{item.position}</p>
+              <p className="text-gray-400 pt-3 ">{item.role}</p>
             </motion.div>
           ))}
       </div>
