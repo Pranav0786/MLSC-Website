@@ -43,7 +43,7 @@ const Card = () => {
           setSelectedBoard(post[nextIndex]);
           return nextIndex;
         });
-      }, 3000); // Change every 3 seconds
+      }, 7000); // Change every 7 seconds
 
       return () => clearInterval(intervalId); // Clean up the interval on unmount
     }

@@ -49,7 +49,7 @@ export const data = [
         image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763523/MLSC%20Images/main-hemant_shuwf0.jpg?_s=public-apps"
     },
     {
-        name: "Athrav Pandey",
+        name: "Atharva Pandey",
         position: "Technical Team",
         role: "Development Lead" ,
         board: "main",
