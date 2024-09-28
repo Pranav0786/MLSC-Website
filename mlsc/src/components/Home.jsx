@@ -102,7 +102,7 @@ const Home = () => {
           
       <div className='h-2 xl:h-0'></div>
 
-      {/* Image - Only visible on large screens */}
+      
       <div 
         data-aos="fade-up"
         className="w-4/5 lg:w-[550px] lg:block relative transform ">

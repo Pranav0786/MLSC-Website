@@ -13,8 +13,8 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     title: "Azure Xplore",
-    text: "Register Now",
-    link: "https://forms.office.com/r/xH1KmPK8Aj" ,
+    text: "Registration Closed",
+    link: "" ,
     description: "Explore cloud computing and Microsoft Azure by starting with foundational concepts and Azure services. Gain hands-on experience in setting up and managing resources, and learn to build and deploy applications using Azure's tools for practical development.",
   },
   {
