@@ -63,13 +63,6 @@ export const data = [
         image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763581/MLSC%20Images/main-hrushi_nkuo6x.jpg?_s=public-apps"
     },
     {
-        name: "Jayshree Mali",
-        position: "Social Team",
-        role: "Marketing and Social Engagement Lead" ,
-        board: "main",
-        image: "https://res.cloudinary.com/do7rdio94/image/upload/fl_preserve_transparency/v1726763637/MLSC%20Images/main-jayshree_r1qcgf.jpg?_s=public-apps"
-    },
-    {
         name: "Aishawarya Rajput",
         position: "Social Team",
         role: "Marketing and Social Engagement Lead" ,

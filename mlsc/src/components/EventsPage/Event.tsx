@@ -12,6 +12,12 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
+    title: "AI Nexus",
+    text: "Get Register",
+    link: "https://ainexus.wcemlsc.org/" ,
+    description: "AI Nexus delves into the cutting-edge developments in artificial intelligence. Discover the latest advancements and applications of AI technologies through expert presentations and hands-on sessions. Learn how AI is transforming industries and gain insights into practical implementations and future trends.",
+  },
+  {
     title: "Azure Xplore",
     text: "Registration Closed",
     link: "" ,
@@ -29,12 +35,7 @@ const timelineData: TimelineItem[] = [
     link: "" ,
     description: "Join us at the Synergy Summit, a premier event focusing on collaboration and innovation across various industries. Connect with thought leaders and industry experts to explore emerging trends and best practices. Participate in dynamic discussions and workshops to drive synergy and foster collaborative solutions.",
   },
-  {
-    title: "AI Nexus",
-    text: "Coming soon...",
-    link: "" ,
-    description: "AI Nexus delves into the cutting-edge developments in artificial intelligence. Discover the latest advancements and applications of AI technologies through expert presentations and hands-on sessions. Learn how AI is transforming industries and gain insights into practical implementations and future trends.",
-  },
+  
 ]
 
 const TimelineItem: React.FC<{ item: TimelineItem; index: number }> = ({ item, index }) => {
